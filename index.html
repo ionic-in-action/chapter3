@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Notebook</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">My Notebook</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><button class="btn btn-primary btn-xs pull-right">New</button> My Notes</h3>
+            </div>
+            <div class="panel-body">
+              <p>No notes</p>
+              <ul class="list-group">
+                <li class="list-group-item"><br />
+                <small></small></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"> <button class="btn btn-primary btn-xs pull-right">Edit</button></h3>
+            </div>
+            <div class="panel-body"></div>
+            <div class="panel-footer"></div>
+          </div>
+          <form name="editor" class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><input type="text" class="form-control" placeholder="New Note" required /></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3>Editor</h3>
+                  <textarea class="form-control editor" rows="10" placeholder="Note Content" required></textarea>
+                </div>
+                <div class="col-sm-6">
+                  <h3>Preview</h3>
+                  <div class="preview"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <button class="btn btn-primary">Save</button>
+              <button class="btn btn-danger pull-right">Delete</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>>
+    <script src="bower_components/showdown/compressed/showdown.js"></script>
+
+  </body>
+</html>

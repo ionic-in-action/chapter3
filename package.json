@@ -1,0 +1,20 @@
+{
+  "name": "chapter3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-in-action/chapter3.git"
+  },
+  "author": "Jeremy Wilken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionic-in-action/chapter3/issues"
+  },
+  "homepage": "https://github.com/ionic-in-action/chapter3",
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "express": "^4.10.2"
+  }
+}
