@@ -1,0 +1,16 @@
+{
+  "name": "chapter3",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ionic-in-action/chapter3",
+  "authors": [
+    "Jeremy Wilken <gnomation@gnomeontherun.com>"
+  ],
+  "description": "Chapter 3 of Ionic in Action",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "angular": "~1.3.6",
+    "showdown": "~0.3.1"
+  }
+}
