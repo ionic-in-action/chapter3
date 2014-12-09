@@ -150,6 +150,7 @@ app.delete('/notes/:id', function (req, res) {
   });
 });
 
-app.listen(3000, function () {
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
   console.log('Server started. Open http://localhost:3000 in your browser.');
 });
