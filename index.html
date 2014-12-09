@@ -39,14 +39,14 @@
           </div>
         </div>
         <div class="col-sm-9">
-          <div class="panel panel-default">
+          <div class="panel panel-default" ng-hide="editing">
             <div class="panel-heading">
-              <h3 class="panel-title"> <button class="btn btn-primary btn-xs pull-right">Edit</button></h3>
+              <h3 class="panel-title">{{content.title}} <button class="btn btn-primary btn-xs pull-right">Edit</button></h3>
             </div>
-            <div class="panel-body"></div>
-            <div class="panel-footer"></div>
+            <div class="panel-body">{{content.content}}</div>
+            <div class="panel-footer">{{content.date | date:'short'}}</div>
           </div>
-          <form name="editor" class="panel panel-default">
+          <form name="editor" class="panel panel-default" ng-show="editing">
             <div class="panel-heading">
               <h3 class="panel-title"><input type="text" class="form-control" placeholder="New Note" required /></h3>
             </div>
