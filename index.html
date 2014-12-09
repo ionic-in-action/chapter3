@@ -32,7 +32,7 @@
             <div class="panel-body">
               <p ng-if="!notes.length">No notes</p>
               <ul class="list-group">
-                <li class="list-group-item" ng-repeat="note in notes">{{note.title}}<br />
+                <li class="list-group-item" ng-repeat="note in notes" ng-click="view($index)" ng-class="{active: note.id == content.id}">{{note.title}}<br />
                 <small>{{note.date | date:'short'}}</small></li>
               </ul>
             </div>
