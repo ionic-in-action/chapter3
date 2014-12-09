@@ -30,10 +30,10 @@
               <h3 class="panel-title"><button class="btn btn-primary btn-xs pull-right">New</button> My Notes</h3>
             </div>
             <div class="panel-body">
-              <p>No notes</p>
+              <p ng-if="!notes.length">No notes</p>
               <ul class="list-group">
-                <li class="list-group-item"><br />
-                <small></small></li>
+                <li class="list-group-item" ng-repeat="note in notes">{{note.title}}<br />
+                <small>{{note.date | date:'short'}}</small></li>
               </ul>
             </div>
           </div>
