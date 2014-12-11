@@ -36,33 +36,36 @@ app.post('/notes/:id', function (req, res) {
       return console.log(err);
     }
 
-    // Try to parse the JSON or return
-    try {
-      data = JSON.parse(data);
-    } catch (e) {
-      res.status(500).end();
-      return console.log(e);
-    }
+    // Disable storing for test site
+    res.status(200).send(data);
 
-    // Add body item to notes array
-    data.forEach(function (note, index) {
-      if (note.id == req.params.id) {
-        data[index] = req.body;
-      }
-    });
+    // // Try to parse the JSON or return
+    // try {
+    //   data = JSON.parse(data);
+    // } catch (e) {
+    //   res.status(500).end();
+    //   return console.log(e);
+    // }
 
-    // Write file back to server
-    fs.writeFile(__dirname + '/data/notes.json', JSON.stringify(data), function (err) {
+    // // Add body item to notes array
+    // data.forEach(function (note, index) {
+    //   if (note.id == req.params.id) {
+    //     data[index] = req.body;
+    //   }
+    // });
+
+    // // Write file back to server
+    // fs.writeFile(__dirname + '/data/notes.json', JSON.stringify(data), function (err) {
       
-      // If we get an error, log it and return
-      if (err) {
-        res.status(500).end();
-        return console.log(err);
-      }
+    //   // If we get an error, log it and return
+    //   if (err) {
+    //     res.status(500).end();
+    //     return console.log(err);
+    //   }
 
-      // No errors, everything is done so return new data
-      res.status(200).send(data);
-    });
+    //   // No errors, everything is done so return new data
+    //   res.status(200).send(data);
+    // });
   });
 });
 
@@ -77,29 +80,32 @@ app.put('/notes', function (req, res) {
       return console.log(err);
     }
 
-    // Try to parse the JSON or return
-    try {
-      data = JSON.parse(data);
-    } catch (e) {
-      res.status(500).end();
-      return console.log(e);
-    }
+    // Disable storing for test site
+    res.status(200).send(data);
 
-    // Add body item to notes array
-    data.push(req.body);
+    // // Try to parse the JSON or return
+    // try {
+    //   data = JSON.parse(data);
+    // } catch (e) {
+    //   res.status(500).end();
+    //   return console.log(e);
+    // }
 
-    // Write file back to server
-    fs.writeFile(__dirname + '/data/notes.json', JSON.stringify(data), function (err) {
+    // // Add body item to notes array
+    // data.push(req.body);
+
+    // // Write file back to server
+    // fs.writeFile(__dirname + '/data/notes.json', JSON.stringify(data), function (err) {
       
-      // If we get an error, log it and return
-      if (err) {
-        res.status(500).end();
-        return console.log(err);
-      }
+    //   // If we get an error, log it and return
+    //   if (err) {
+    //     res.status(500).end();
+    //     return console.log(err);
+    //   }
 
-      // No errors, everything is done so return new data
-      res.status(201).send(data);
-    });
+    //   // No errors, everything is done so return new data
+    //   res.status(201).send(data);
+    // });
   });
 });
 
@@ -114,39 +120,42 @@ app.delete('/notes/:id', function (req, res) {
       return console.log(err);
     }
 
-    // Try to parse the JSON or return
-    try {
-      data = JSON.parse(data);
-    } catch (e) {
-      res.status(500).end();
-      return console.log(e);
-    }
+    // Disable storing for test site
+    res.status(200).send(data);
 
-    // Add body item to notes array
-    var index = -1;
-    data.forEach(function (note, i) {
-      if (note.id == req.params.id) {
-        index = i;
-      }
-    });
+    // // Try to parse the JSON or return
+    // try {
+    //   data = JSON.parse(data);
+    // } catch (e) {
+    //   res.status(500).end();
+    //   return console.log(e);
+    // }
 
-    // If we found an item by that id, remove it
-    if (index >= 0) {
-      data.splice(index, 1);
-    }
+    // // Add body item to notes array
+    // var index = -1;
+    // data.forEach(function (note, i) {
+    //   if (note.id == req.params.id) {
+    //     index = i;
+    //   }
+    // });
 
-    // Write file back to server
-    fs.writeFile(__dirname + '/data/notes.json', JSON.stringify(data), function (err) {
+    // // If we found an item by that id, remove it
+    // if (index >= 0) {
+    //   data.splice(index, 1);
+    // }
+
+    // // Write file back to server
+    // fs.writeFile(__dirname + '/data/notes.json', JSON.stringify(data), function (err) {
       
-      // If we get an error, log it and return
-      if (err) {
-        res.status(500).end();
-        return console.log(err);
-      }
+    //   // If we get an error, log it and return
+    //   if (err) {
+    //     res.status(500).end();
+    //     return console.log(err);
+    //   }
 
-      // No errors, everything is done so return
-      res.status(204).end();
-    });
+    //   // No errors, everything is done so return
+    //   res.status(204).end();
+    // });
   });
 });
 
