@@ -30,11 +30,13 @@
               <h3 class="panel-title"><button class="btn btn-primary btn-xs pull-right" ng-click="create()">New</button> My Notes</h3>
             </div>
             <div class="panel-body">
+
               <p ng-if="!notes.length">No notes {{error}}</p>
               <ul class="list-group">
                 <li class="list-group-item" ng-repeat="note in notes"  ng-click="view($index)"
                 ng-class="{active:note.id==content.id}">{{note.title}}<br />
                 <small>{{note.date|date:'short'}}</small></li>
+
               </ul>
             </div>
           </div>
@@ -42,10 +44,12 @@
         <div class="col-sm-9">
           <div class="panel panel-default" ng-hide="editing">
             <div class="panel-heading">
+
               <h3 class="panel-title"> {{content.title}}<button class="btn btn-primary btn-xs pull-right" ng-click="editing=true">Edit</button></h3>
             </div>
             <div class="panel-body">markdown="{{content.content}}"</div>
             <div class="panel-footer">{{content.date|date:'short'}}</div>
+
           </div>
           <form name="editor" class="panel panel-default" ng-show="editing">
             <div class="panel-heading">
@@ -55,17 +59,21 @@
               <div class="row">
                 <div class="col-sm-6">
                   <h3>Editor</h3>
+
                   <textarea class="form-control editor" rows="10" ng-model = "content.title" placeholder="Note Content" required></textarea>
                 </div>
                 <div class="col-sm-6">
                   <h3>Preview</h3>
                   <div class="preview" markdown="{{content.content}}"> </div>
+
                 </div>
               </div>
             </div>
             <div class="panel-footer">
+
               <button class="btn btn-primary" ng-click="save()" ng-disable="editor.$invalid">Save</button>
               <button class="btn btn-danger pull-right" ng-click-"remove()" ng-if="content.id">Delete</button>
+
             </div>
           </form>
         </div>
