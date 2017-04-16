@@ -1,4 +1,3 @@
-
 angular.module("App")//控制器
 .controller('EditorController',function($scope,$http){
 	$scope.editing = true;
@@ -53,5 +52,6 @@ angular.module("App")//控制器
 			$scope.error = "remove error"
 		});
 	};
+
 
 });
